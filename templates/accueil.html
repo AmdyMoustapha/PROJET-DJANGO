@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en"> <!-- lang est un attribut qui definie la langue -->
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accueil</title>
+</head>
+<body>
+    <hr>
+    <!-- h corespond à header -->
+    <h1 style="font-size: 60px;">Ma page d'Accueil</h1>
+    <hr><!-- la balise hr sert a tracer des ligne  -->
+    <h2>Ma deuxieme page d'Accueil</h2>
+    <h3>Ma troisieme page d'Accueil</h3>
+
+    <!-- la balise 'p' corespond à paragraphe -->
+    <p id= 'para' title ="Je suis un attribut" style="color:red"></p><!-- voir le JS cidessous -->
+    <p>Mon  <br> deuxieme paragraphe </p>
+
+    <!-- la balise 'a' sert contenir des liens -->
+    <a href="https://mail.google.com/mail/u/0/#inbox/FMfcgzQhVhXMpKtrhJwMKFdhNnznlZsx?projector=1&messagePartId=0.1">ça c'est un link vers mon compte gmail</a>
+   
+    <!-- br est une balise pour separer deux elements de part et d'autre par a la ligne -->
+    <br>
+    <br>
+
+    <!-- la balise pour les images -->
+    <img title ="cette image ne marche pas" src="w3schools.jpg" alt="oups">
+
+    <!-- la balise 'pre' sert a avoir des text elaborés -->
+    <pre style="font-size: 30px;">
+        Moustaph Ly 
+        né à Dakar 
+        Mais Batisé
+        à Dakar.
+    </pre>
+    <!-- ====================================================JAVASCRIPT=============================================== -->
+    <!-- le JS est un langage du WEB. Il peut recuperer modifier et valider des données, il peut aussi mettre à jour et modifier de HTML et le CSS
+    On peut utiliser des fichier.js externe. Il suffit de les appeler avec l'attribut src dans la balise <script> -->
+    <SCRIpt>
+        document.getElementById("para").innerHTML = "Mon paragraphe";
+    </SCRIpt>
+</body>
+</html>
