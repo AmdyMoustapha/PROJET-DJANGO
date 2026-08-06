@@ -6,16 +6,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Accueil</title>
 </head>
-<body>
+<!-- Les attributs d'une balise sert à modifier le comportement d'un element  -->
+<!-- Tous les éléments HTML peuvent avoir des attributs
+        L'attribut href de la balise <a> spécifie l'URL de la page vers laquelle le lien renvoie
+        L'attribut src de la balise <img> spécifie le chemin d'accès à l'image à afficher
+        Les attributs width et height de la balise <img> indiquent les dimensions de l'image
+        L'attribut alt de la balise <img> fournit un texte alternatif pour l'image
+        L'attribut style est utilisé pour appliquer des styles à un élément, tels que la couleur, la police, la taille, etc.
+        L'attribut lang de la balise <html> déclare la langue de la page web
+        L'attribut title définit des informations supplémentaires concernant un élément -->
+
+<body style="background-color: antiquewhite;">
     <hr>
     <!-- h corespond à header -->
-    <h1 style="font-size: 60px;">Ma page d'Accueil</h1>
+    <h1 style="font-size: 60px; background-color: blue; text-align: center;">Ma page d'Accueil</h1>
     <hr><!-- la balise hr sert a tracer des ligne  -->
-    <h2>Ma deuxieme page d'Accueil</h2>
-    <h3>Ma troisieme page d'Accueil</h3>
+    <h2 style="background-color: rgb(63, 74, 233); font-family: Trebuchet MS; text-align: center;">Ma deuxieme page d'Accueil</h2>
+    <h3 style="background-color: rgb(103, 103, 224); font-family:Segoe UI; text-align: center;">Ma troisieme page d'Accueil</h3>
 
     <!-- la balise 'p' corespond à paragraphe -->
-    <p id= 'para' title ="Je suis un attribut" style="color:red"></p><!-- voir le JS cidessous -->
+    <p id= 'para' title ="Je suis un attribut" style="color:red;"></p><!-- voir le JS cidessous -->
     <p>Mon  <br> deuxieme paragraphe </p>
 
     <!-- la balise 'a' sert contenir des liens -->
@@ -29,12 +39,16 @@
     <img title ="cette image ne marche pas" src="w3schools.jpg" alt="oups">
 
     <!-- la balise 'pre' sert a avoir des text elaborés -->
-    <pre style="font-size: 30px;">
+    <pre style="font-size: 30px; text-align: start;">
         Moustaph Ly 
         né à Dakar 
         Mais Batisé
         à Dakar.
     </pre>
+    
+    
+
+
     <!-- ====================================================JAVASCRIPT=============================================== -->
     <!-- le JS est un langage du WEB. Il peut recuperer modifier et valider des données, il peut aussi mettre à jour et modifier de HTML et le CSS
     On peut utiliser des fichier.js externe. Il suffit de les appeler avec l'attribut src dans la balise <script> -->
