@@ -1,35 +1,27 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from django.contrib import messages
+from .forms import InscriptionForm
 
 # Create your views here.
-def inscription_view(request):
-    if request.method == "POST":
-        form = InscriptionForm(request.POST)
-        if form.is_valid():  
-            data = form.cleaned_data
-            try:
-                with transaction.atomic():
-                    user = User.objects.create_user(
-                        username=data["email"],
-                        email=data["email"],
-                        password=data["mot_de_passe"],
-                        first_name=data["prenom"],
-                        last_name=data["nom"],
-                    )
-                    # Assurez-vous que le modèle 'Utilisateur' existe
-                    Utilisateur.objects.create(
-                        user=user,
-                        telephone=data["telephone"],
-                        adresse=data["adresse"],
-                    )
-                messages.success(
-                    request, "Votre compte et votre profil ont été créés !"
-                )
-                return redirect("connexion")
 
-            except Exception as e:
-                form.add_error(
-                    None, f"Une erreur est survenue lors de l'inscription : {e}"
-                )
-    else:
-        form = InscriptionForm()
-    return render(request, "register.html", {"form": form})
+# def inscrire_utilisateur(request):
+#     if request.method == 'POST':
+#         form = InscriptionForm(request.POST)
+#         if form.is_valid():
+#             # Récupération des données validées
+#             nom = form.cleaned_data['nom_utilisateur']
+#             email = form.cleaned_data['email']
+#             mdp = form.cleaned_data['mot_de_passe']
+            
+#             # Action personnalisée (ex: appeler une API externe ou envoyer un e-mail)
+#             # ...
+            
+#             messages.success(request, f"Inscription réussie pour {nom} !")
+#             return redirect('accueil')
+#     else:
+#         form = InscriptionForm()
+        
+#     return render(request, 'inscription.html', {'form': form})
+
+def inscription_view(request):
+    return render(request,"inscription.html",{})

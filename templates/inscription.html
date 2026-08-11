@@ -6,7 +6,106 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inscription</title>
 </head>
-<body>
+<body style="background-color: #000000; text-align: center;">
+    <div>
+        <header>
+            <hr>
+            <h1 style="font-size: x-large; color: antiquewhite;">
+                FORMULAIRE D'INSCRIPTION
+            </h1>
+            <hr>
+        </header>
+    </div>
     
+    <!-- FORMULAIRE 1 -->
+    <!-- <form method="post">
+        {% csrf_token %}
+        
+        Affichage global des erreurs du formulaire
+        {{ form.non_field_errors }}
+        
+        Boucle pour afficher chaque champ proprement
+        {% for field in form %}
+            <div style="margin-bottom: 15px;">
+                <label>{{ field.label }}</label><br>
+                {{ field }}
+                {% if field.errors %}
+                    <span style="color: red;">{{ field.errors|striptags }}</span>
+                {% endif %}
+            </div>
+        {% endfor %}
+        
+        <button type="submit">S'inscrire</button>
+    </form> -->
+    <!-- ------------------- -->
+
+    <!-- FORMULAIRE 2 -->
+    <!-- <form method="POST">
+        {% csrf_token %}
+    
+        Erreurs globales (ex: mots de passe non identiques)
+        {% if form.non_field_errors %}
+            <p style="color: red;">{{ form.non_field_errors.as_text }}</p>
+        {% endif %}
+    
+        Input Nom d'utilisateur
+        <div>
+            <label>Nom d'utilisateur :</label>
+            {{ form.nom_utilisateur }}
+            <span style="color: red;">{{ form.nom_utilisateur.errors }}</span>
+        </div>
+    
+        Input Email
+        <div>
+            <label>Adresse e-mail :</label>
+            {{ form.email }}
+            <span style="color: red;">{{ form.email.errors }}</span>
+        </div>
+    
+        Input Mot de passe
+        <div>
+            <label>Mot de passe :</label>
+            {{ form.mot_de_passe }}
+            <span style="color: red;">{{ form.mot_de_passe.errors }}</span>
+        </div>
+    
+        Input Confirmation
+        <div>
+            <label>Confirmez le mot de passe :</label>
+            {{ form.confirmation_mot_de_passe }}
+            <span style="color: red;">{{ form.confirmation_mot_de_passe.errors }}</span>
+        </div>
+    
+        <button type="submit">S'inscrire</button>
+    </form> -->
+    <!-- ------------------------- -->
+    <form method="POST">
+        <!-- <div class="alert alert-danger">
+            Une ou plusieur informations sont manquantes.
+        </div> -->
+
+        <div>
+            <label>Nom d'utilisateur:</label>
+            <input type="text">
+        </div>
+
+        <div>
+            <label>Adresse Email:</label>
+            <input type="text">
+        </div>
+
+        <div>
+            <label>Mot de passe:</label>
+            <input type="text">
+        </div>
+
+        <div>
+            <label>Confirmation de mot de passe:</label>
+            <input type="text">
+        </div>
+
+        <BUtton type="submit">S'inscrire</BUtton>
+
+    </form>
 </body>
 </html>

@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 
 # Create your views here.
 def connexion_view(request):
+    return render(request,"connexion.html",{})
     # if request.user.is_authenticated:
     #     return redirect("accueil")
 
@@ -23,4 +24,3 @@ def connexion_view(request):
     #     else:
     #         messages.error(request, "Identifiant ou mot de passe incorrect.")
     # return render(request, "connexion.html")
-    return render(request,"connexion.html",{})
