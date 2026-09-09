@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/6.0/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -31,6 +32,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'jazzmin',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -40,6 +42,72 @@ INSTALLED_APPS = [
     'accueil',
     'connexion',
 ]
+
+JAZZMIN_SETTINGS = {
+    # Titre de la fenêtre du navigateur
+    "site_title": "DEV Admin - SITE WEB PROTOTYPE",
+    
+    # Titre sur l'écran de connexion
+    "site_header": "PROTOTYPE",
+    
+    # Marque/Texte en haut à gauche du tableau de bord
+    "site_brand": "SITE PROTOTYPE",
+    
+    # Logo pour le site (placez l'image de l'OFOR dans vos fichiers statiques)
+    "site_logo": "images/logos/logoDEV.png", 
+    
+    # Logo pour l'écran de connexion
+    "login_logo": "images/logos/logoDEV.png",
+    
+    # Message de bienvenue sur l'écran de connexion
+    "welcome_sign": "ICI ON DEVELOPPE DES SITES WEB PROTOTYPES",
+    
+    # Copyright en bas de page
+    "copyright": "Amdy Moustapha developpeur chercheur consultant",
+    
+    # Liens de recherche rapide ou de profil
+    "search_model": ["auth.User"],
+    
+    # Forme des éléments d'interface (liens carrés ou arrondis)
+    "topmenu_links": [
+        {"name": "Accueil", "url": "admin:index", "permissions": ["auth.view_user"]},
+        {"model": "auth.User"},
+    ],
+    
+    # Afficher le sélecteur de thèmes en développement (à couper en production)
+    "show_ui_builder": False,
+}
+
+JAZZMIN_UI_TWEAKS = {
+    # Barre de navigation supérieure en Noir Profond pour faire ressortir le bleu électrique
+    "navbar": "navbar-dark navbar-black",
+    
+    # Couleur de la marque (Logo/Texte en haut à gauche) en Bleu Électrique
+    "brand_colour": "navbar-primary",
+    
+    # Barre latérale (Sidebar) sombre et moderne, assortie au fond du logo
+    "sidebar": "sidebar-dark-primary",
+    
+    # Garder la taille de texte standard pour une lecture nette et professionnelle
+    "sidebar_nav_small_text": False,
+    "sidebar_disable_expand": False,
+    
+    # Couleur d'accentuation principale (Bleu Lumineux) pour les liens actifs et sélections
+    "accent": "accent-primary",
+    
+    # Configuration des boutons pour correspondre aux boutons d'action du logo
+    "button_classes": {
+        "primary": "btn-primary",       # Bleu Électrique pour les actions principales (Enregistrer)
+        "secondary": "btn-outline-light", # Blanc/Transparent pour le style épuré
+        "info": "btn-info",
+        "warning": "btn-warning",       # Jaune/Or (Rappel de l'ampoule/innovation)
+        "danger": "btn-danger",
+        "success": "btn-success"
+    },
+    
+    # Optionnel : thèmes de cartes (Boxes) épurés et clairs à l'intérieur des pages
+    "box_theme": "card-primary",
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -116,4 +184,12 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/6.0/howto/static-files/
 
+# L'URL pour accéder aux fichiers statiques dans le navigateur
 STATIC_URL = 'static/'
+# Le dossier où Django va rassembler TOUS les fichiers statiques du projet (obligatoire)
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+# Les dossiers contenant vos propres fichiers statiques (comme le logo de l'OFOR)
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static'),
+]
