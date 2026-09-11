@@ -4,7 +4,7 @@ from .forms import InscriptionForm
 
 # Create your views here.
 
-# def inscrire_utilisateur(request):
+# def inscription_view(request):
 #     if request.method == 'POST':
 #         form = InscriptionForm(request.POST)
 #         if form.is_valid():

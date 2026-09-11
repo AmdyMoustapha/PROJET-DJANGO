@@ -16,96 +16,45 @@
             <hr>
         </header>
     </div>
-    
-    <!-- FORMULAIRE 1 -->
-    <!-- <form method="post">
-        {% csrf_token %}
-        
-        Affichage global des erreurs du formulaire
-        {{ form.non_field_errors }}
-        
-        Boucle pour afficher chaque champ proprement
-        {% for field in form %}
-            <div style="margin-bottom: 15px;">
-                <label>{{ field.label }}</label><br>
-                {{ field }}
-                {% if field.errors %}
-                    <span style="color: red;">{{ field.errors|striptags }}</span>
-                {% endif %}
-            </div>
-        {% endfor %}
-        
-        <button type="submit">S'inscrire</button>
-    </form> -->
-    <!-- ------------------- -->
-
-    <!-- FORMULAIRE 2 -->
-    <!-- <form method="POST">
-        {% csrf_token %}
-    
-        Erreurs globales (ex: mots de passe non identiques)
-        {% if form.non_field_errors %}
-            <p style="color: red;">{{ form.non_field_errors.as_text }}</p>
-        {% endif %}
-    
-        Input Nom d'utilisateur
-        <div>
-            <label>Nom d'utilisateur :</label>
-            {{ form.nom_utilisateur }}
-            <span style="color: red;">{{ form.nom_utilisateur.errors }}</span>
-        </div>
-    
-        Input Email
-        <div>
-            <label>Adresse e-mail :</label>
-            {{ form.email }}
-            <span style="color: red;">{{ form.email.errors }}</span>
-        </div>
-    
-        Input Mot de passe
-        <div>
-            <label>Mot de passe :</label>
-            {{ form.mot_de_passe }}
-            <span style="color: red;">{{ form.mot_de_passe.errors }}</span>
-        </div>
-    
-        Input Confirmation
-        <div>
-            <label>Confirmez le mot de passe :</label>
-            {{ form.confirmation_mot_de_passe }}
-            <span style="color: red;">{{ form.confirmation_mot_de_passe.errors }}</span>
-        </div>
-    
-        <button type="submit">S'inscrire</button>
-    </form> -->
     <!-- ------------------------- -->
-    <form method="POST">
-        <!-- <div class="alert alert-danger">
-            Une ou plusieur informations sont manquantes.
-        </div> -->
+    <div>
+        <form method="POST" action="/inscription">
+            <!-- Message d'erreur Bootstrap (décommenté si nécessaire) -->
+            <!-- 
+            <div class="alert alert-danger" role="alert">
+                Une ou plusieurs informations sont manquantes.
+            </div> 
+            -->
 
-        <div>
-            <label>Nom d'utilisateur:</label>
-            <input type="text">
-        </div>
+            <div class="col-md-6">
+                <div class="field-set">
+                    <label style="color:antiquewhite;">Nom d'utilisateur</label>
+                    <input type="text" id="username" name="username" classe="form-control" required>
+                </div>
+            </div>
+        
+            <div class="col-md-6">
+                <div class="field-set">
+                    <label style="color:antiquewhite;">Adresse Email</label>
+                    <input type="email" id="email" name="email" classe="form-control" required>
+                </div>
+            </div>
 
-        <div>
-            <label>Adresse Email:</label>
-            <input type="text">
-        </div>
+            <div class="col-md-6"><div class="field-set">
+                <label style="color:antiquewhite;">Mot de passe :</label>
+                <input type="password" id="password" name="password" classe="form-control" required>
+            </div></div>
 
-        <div>
-            <label>Mot de passe:</label>
-            <input type="text">
-        </div>
-
-        <div>
-            <label>Confirmation de mot de passe:</label>
-            <input type="text">
-        </div>
-
-        <BUtton type="submit">S'inscrire</BUtton>
-
-    </form>
+            <div class="col-md-6">
+                <div class="field-set">
+                    <label style="color:antiquewhite;">Confirmation de mot de passe :</label>
+                    <input type="password" id="password_confirm" name="password_confirm" classe="form-control" required>
+                </div>
+            </div>
+        
+            <button type="submit">S'inscrire</button>
+        </form>
+    </div>
+    
 </body>
 </html>
