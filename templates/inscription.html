@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,12 +6,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inscription</title>
+
+    <!-- 1. FEUILLE DE STYLE BOOTSTRAP (CDN) -->
+    <link href="https://jsdelivr.net" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- FICHIERS CSS 
+    ================================================================== -->
+    <link rel="stylesheet" href="style.css">
 </head>
-<body style="background-color: #000000; text-align: center;">
+<body style="background-color: #ffffff; text-align: center;">
     <div>
         <header>
             <hr>
-            <h1 style="font-size: x-large; color: antiquewhite;">
+            <h1 style="font-size: x-large; color: rgb(0, 0, 0);">
                 FORMULAIRE D'INSCRIPTION
             </h1>
             <hr>
@@ -18,42 +25,59 @@
     </div>
     <!-- ------------------------- -->
     <div>
-        <form method="POST" action="/inscription">
-            <!-- Message d'erreur Bootstrap (décommenté si nécessaire) -->
-            <!-- 
-            <div class="alert alert-danger" role="alert">
-                Une ou plusieurs informations sont manquantes.
-            </div> 
-            -->
-
-            <div class="col-md-6">
-                <div class="field-set">
-                    <label style="color:antiquewhite;">Nom d'utilisateur</label>
-                    <input type="text" id="username" name="username" classe="form-control" required>
-                </div>
+        <!-- Conteneur principal stylisé comme un grand badge / carte -->
+        <div class="card shadow-sm border-0 rounded-4" style="max-width: 600px; margin: 20px auto; background-color: #f8f9fa;">
+            <div class="card-header bg-dark text-white text-center rounded-top-4 py-3">
+                <h5 class="mb-0">Créer un compte</h5>
             </div>
-        
-            <div class="col-md-6">
-                <div class="field-set">
-                    <label style="color:antiquewhite;">Adresse Email</label>
-                    <input type="email" id="email" name="email" classe="form-control" required>
-                </div>
-            </div>
+            
+            <div class="card-body p-4">
+                <!-- Début du formulaire (Corrigé : pas de fermeture immédiate) -->
+                <form action="{% url 'inscription' %}" method="POST" class="row g-3">
+                    
+                    <!-- Message d'erreur Bootstrap -->
+                    <!-- 
+                    <div class="col-12">
+                        <div class="alert alert-danger" role="alert">
+                            Une ou plusieurs informations sont manquantes.
+                        </div> 
+                    </div>
+                    -->
+                    
+                    <div class="col-md-6">
+                        <div class="mb-3">
+                            <label for="username" class="form-label fw-bold text-dark">Nom d'utilisateur</label>
+                            <input type="text" id="username" name="username" class="form-control" required>
+                        </div>
+                    </div>
+                
+                    <div class="col-md-6">
+                        <div class="mb-3">
+                            <label for="email" class="form-label fw-bold text-dark">Adresse Email</label>
+                            <input type="email" id="email" name="email" class="form-control" required>
+                        </div>
+                    </div>
 
-            <div class="col-md-6"><div class="field-set">
-                <label style="color:antiquewhite;">Mot de passe :</label>
-                <input type="password" id="password" name="password" classe="form-control" required>
-            </div></div>
+                    <div class="col-md-6">
+                        <div class="mb-3">
+                            <label for="password" class="form-label fw-bold text-dark">Mot de passe</label>
+                            <input type="password" id="password" name="password" class="form-control" required>
+                        </div>
+                    </div>
 
-            <div class="col-md-6">
-                <div class="field-set">
-                    <label style="color:antiquewhite;">Confirmation de mot de passe :</label>
-                    <input type="password" id="password_confirm" name="password_confirm" classe="form-control" required>
-                </div>
+                    <div class="col-md-6">
+                        <div class="mb-3">
+                            <label for="password_confirm" class="form-label fw-bold text-dark">Confirmation</label>
+                            <input type="password" id="password_confirm" name="password_confirm" class="form-control" required>
+                        </div>
+                    </div>
+                
+                    <div class="col-12 text-center mt-3">
+                        <button type="submit" class="btn btn-dark w-100 py-2 rounded-3">S'inscrire</button>
+                    </div>
+                </form>
             </div>
-        
-            <button type="submit">S'inscrire</button>
-        </form>
+        </div>
     </div>
     
 </body>
